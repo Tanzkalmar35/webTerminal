@@ -1,9 +1,6 @@
 <script lang="ts">
-
 </script>
 
-<div class="w-full h-full bg-primary">
-
-
+<div data-theme="luxury" class="min-w-[100vw] min-h-[100vh]">
 
 </div>
