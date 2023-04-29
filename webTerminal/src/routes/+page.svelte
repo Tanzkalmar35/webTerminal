@@ -1,1 +1,9 @@
-<h1 class="text-3xl font-bold underline">Hello there!</h1>
+<script lang="ts">
+
+</script>
+
+<div class="w-full h-full bg-primary">
+
+
+
+</div>
