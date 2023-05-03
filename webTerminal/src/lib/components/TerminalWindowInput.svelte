@@ -1,23 +1,20 @@
 <script lang="ts">
 
+    import {executeCommand, isValidCommand} from "../InputCommandHandler.ts";
+
     let terminalInputElement;
 
     let currentCommand: string = "";
 
-    const allCommands: Array<string> = [
-        "help",
-        "about",
-        "projects",
-        "contact",
-        "clear",
-    ];
-
-    function commandSubmit(e: KeyboardEvent) {
+    function submitCommand(e: KeyboardEvent) {
         if (e.code !== "Enter") return;
 
         currentCommand = terminalInputElement.value;
-        allCommands.includes(currentCommand) ? console.log(currentCommand + " Command submitted") :
         terminalInputElement.value = "";
+
+        if (!isValidCommand(currentCommand)) return;
+
+        executeCommand(currentCommand);
     }
 
 </script>
@@ -36,6 +33,6 @@
             autofocus
             data-theme="dracula"
             class="w-full p-5 text-lg focus:outline-none"
-            on:keydown={commandSubmit}
+            on:keydown={submitCommand}
     />
 </div>
