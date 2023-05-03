@@ -10,16 +10,14 @@
         "projects",
         "contact",
         "clear",
-        "exit",
     ];
 
     function commandSubmit(e: KeyboardEvent) {
-        if (e.code === "Enter") {
-            currentCommand = terminalInputElement.value;
-            allCommands.includes(currentCommand) ? console.log(currentCommand + " Command submitted") : "";
+        if (e.code !== "Enter") return;
 
-            terminalInputElement.value = "";
-        }
+        currentCommand = terminalInputElement.value;
+        allCommands.includes(currentCommand) ? console.log(currentCommand + " Command submitted") :
+        terminalInputElement.value = "";
     }
 
 </script>
