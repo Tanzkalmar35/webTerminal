@@ -9,7 +9,10 @@
         <TerminalWindowInput />
         <ul>
             {#each $shellTexts as shellText}
-                <li><p>{shellText}</p></li>
+                <li>
+                    <p>{shellText}</p>
+                    <TerminalWindowInput />
+                </li>
             {/each}
         </ul>
     </div>
