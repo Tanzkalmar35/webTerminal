@@ -1,6 +1,5 @@
 <script lang="ts">
 
-    // Importing methods related to command processing
     import {executeCommand, isValidCommand, writeInvalidCommand} from "../InputCommandHandler.ts";
     import CmdInputElement from "$lib/components/CmdInputElement.svelte";
 
@@ -45,6 +44,6 @@
         <span data-theme="dracula" class="ml-3">~</span>
     </p>
 
-    <!-- The terminal input element -->
+    <!-- The initial terminal input element -->
     <CmdInputElement bind:inputElement={inputElement} submitCommand={submitCommand} />
 </div>
