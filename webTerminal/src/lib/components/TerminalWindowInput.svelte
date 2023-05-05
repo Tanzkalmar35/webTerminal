@@ -1,6 +1,6 @@
 <script lang="ts">
 
-    import {executeCommand, isValidCommand} from "../InputCommandHandler.ts";
+    import {executeCommand, isValidCommand, writeInvalidCommand} from "../InputCommandHandler.ts";
 
     let terminalInputElement;
 
@@ -8,11 +8,12 @@
 
     function submitCommand(e: KeyboardEvent) {
         if (e.code !== "Enter") return;
+        if (terminalInputElement.value === "") return;
 
         currentCommand = terminalInputElement.value;
         terminalInputElement.value = "";
 
-        if (!isValidCommand(currentCommand)) return;
+        if (!isValidCommand(currentCommand)) {writeInvalidCommand(currentCommand); return}
 
         executeCommand(currentCommand);
     }
@@ -20,8 +21,8 @@
 </script>
 
 
-<div data-theme="dracula" class="absolute flex bottom-[0] w-[90vw] m-[2.5vh]">
-    <p class="flex items-center pl-5 text-lg">
+<div data-theme="dracula" class="flex w-[90vw]">
+    <p class="flex items-center text-lg">
         <span data-theme="dracula" class="text-primary">welcome</span>
         <span data-theme="dracula">@</span>
         <span data-theme="dracula" class="text-secondary">portfolio</span>
