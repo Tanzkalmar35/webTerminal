@@ -2,8 +2,9 @@
 
     import {executeCommand, isValidCommand, writeInvalidCommand} from "../InputCommandHandler.ts";
     import CmdInputElement from "$lib/components/CmdInputElement.svelte";
+    import {sharedFunction} from "$lib/stores/Store";
 
-    let inputElement;
+    export let cmdInput;
 
     export let currentCommand: string = ""; // The current command
 
@@ -21,7 +22,7 @@
 
         currentCommand = inputValue; // storing the current command
 
-        inputElement.disabled = true; // Disabling the input element
+        cmdInput.disabled = true; // Disabling the input element
 
         // Printing out an error message and returning if the command is invalid
         if (!isValidCommand(currentCommand)) {writeInvalidCommand(currentCommand); return}
@@ -45,5 +46,5 @@
     </p>
 
     <!-- The initial terminal input element -->
-    <CmdInputElement bind:inputElement={inputElement} submitCommand={submitCommand} />
+    <CmdInputElement bind:inputElement={cmdInput} submitCommand={submitCommand} />
 </div>

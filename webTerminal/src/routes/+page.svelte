@@ -13,12 +13,14 @@
         "███        ███   █████    ███    ████    ███     ████  ██  ███   █████    ██        ███     ████  ██  ███       ███         ███ ████ ███ ███   ███   ███ ████ ████  ███ \n \n \n" +
             "Type help to get started..."
 
+    export let initialCmdInput;
+
 </script>
 
 <div data-theme="dracula" class="min-w-[100vw] min-h-[100vh] flex items-center justify-center">
     <div class="w-[97vw] h-[97vh] outline pl-[5vh] pt-[2vh] overflow-hidden">
         <pre>{asciiNameBanner}</pre>
-        <TerminalWindowInput />
+        <TerminalWindowInput bind:this={initialCmdInput} />
             <ul>
                 {#each $shellTexts as shellText}
                     <li>
