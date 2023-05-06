@@ -1,7 +1,5 @@
 <h1 id="title" align="center">webTerminal</h1>
 
-<p align="center"><img src="" alt="project-image"></p>
-
 <p id="description">This is supposed to be my personal portfolio website in a terminal style. I created this app with svelte and Tailwindcss with the addition of daisyui.</p>
 
 <p align="center"><img src="https://img.shields.io/github/forks/Tanzkalmar35/webTerminal?style=social" alt="shields"><img src="https://img.shields.io/github/stars/Tanzkalmar35/webTerminal?style=social" alt="shields"><img src="https://img.shields.io/github/watchers/Tanzkalmar35/webTerminal?style=social" alt="shields"><img src="https://img.shields.io/github/downloads/Tanzkalmar35/webTerminal/total" alt="shields"></p>
