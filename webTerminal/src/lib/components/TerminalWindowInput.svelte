@@ -2,11 +2,8 @@
 
     import {executeCommand, isValidCommand, writeInvalidCommand} from "../InputCommandHandler.ts";
     import CmdInputElement from "$lib/components/CmdInputElement.svelte";
-    import {sharedFunction} from "$lib/stores/Store";
 
     export let cmdInput;
-
-    export let currentCommand: string = ""; // The current command
 
     /**
      * This function is called when the user submits a command.
@@ -20,14 +17,12 @@
         if (e.code !== "Enter") return; // Making sure this function only fires when the user presses enter
         if (inputValue === "") return; // Returning if the user submits an empty command
 
-        currentCommand = inputValue; // storing the current command
-
         cmdInput.disabled = true; // Disabling the input element
 
         // Printing out an error message and returning if the command is invalid
-        if (!isValidCommand(currentCommand)) {writeInvalidCommand(currentCommand); return}
+        if (!isValidCommand(inputValue)) {writeInvalidCommand(inputValue); return}
 
-        executeCommand(currentCommand); // Executing the command
+        executeCommand(inputValue); // Executing the command
 
     }
 

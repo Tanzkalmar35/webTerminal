@@ -1,18 +1,8 @@
 <script lang="ts">
 
-    import {sharedFunction} from "$lib/stores/Store";
-    import cmdInput from "./TerminalWindowInput.svelte";
-
     export let submitCommand;
     export let inputElement;
     export let inputValue = "";
-
-    function enableInputElement() {
-        cmdInput.disabled = false;
-        cmdInput.focus;
-    }
-
-    $sharedFunction = enableInputElement;
 
 </script>
 
