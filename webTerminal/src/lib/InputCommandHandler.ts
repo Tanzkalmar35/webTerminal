@@ -1,5 +1,4 @@
 import {shellTexts} from "$lib/stores/Store";
-import {clearContentStore} from "$lib/stores/Store";
 
 // Variable declarations
 
