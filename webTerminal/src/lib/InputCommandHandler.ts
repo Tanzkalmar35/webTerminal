@@ -1,4 +1,4 @@
-import {shellTexts} from "$lib/stores/Store";
+import {clearTerminal, shellTexts} from "$lib/stores/Store";
 
 // Variable declarations
 
@@ -71,6 +71,7 @@ function executeClear(): void {
     shellTexts.update((shellTexts: String[]) => []);
 
     // make the initial input available again and clear it
+    clearTerminal.set(true);
 }
 
 // Helper functions for command execution
