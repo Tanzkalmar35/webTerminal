@@ -9,6 +9,11 @@ const commandList: string[] = [
     "projects",
     "email",
     "github",
+    "resume",
+    "skills",
+    "stack",
+    "education",
+    "tech"
 ];
 
 let userMode: "portfolio" | "free" = "portfolio";
