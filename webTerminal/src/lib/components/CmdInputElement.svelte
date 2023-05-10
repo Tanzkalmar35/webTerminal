@@ -1,5 +1,4 @@
 <script lang="ts">
-
     export let submitCommand;
     export let inputElement;
     export let inputValue = "";

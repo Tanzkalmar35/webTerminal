@@ -7,7 +7,7 @@
 
     /**
      * This function is called when the user submits a command.
-     * It checks if the command is valid and executes it if so.
+     * It checks if the command is valid and sends it to the InputCommandHandler if so.
      *
      * @param e The event that the keyboard delivers on every click
      * @param inputValue The value of the input element
@@ -20,7 +20,10 @@
         cmdInput.disabled = true; // Disabling the input element
 
         // Printing out an error message and returning if the command is invalid
-        if (!isValidCommand(inputValue)) {writeInvalidCommand(inputValue); return}
+        if (!isValidCommand(inputValue)) {
+            writeInvalidCommand(inputValue);
+            return
+        }
 
         executeCommand(inputValue); // Executing the command
 
@@ -41,5 +44,5 @@
     </p>
 
     <!-- The initial terminal input element -->
-    <CmdInputElement bind:inputElement={cmdInput} submitCommand={submitCommand} />
+    <CmdInputElement bind:inputElement={cmdInput} submitCommand={submitCommand}/>
 </div>

@@ -1,6 +1,16 @@
-import { writable } from 'svelte/store';
+/**
+ * @file Store.ts
+ * This file contains the stores that are used in the application
+ */
 
-// The store for the whole text of the shell
+import {writable} from 'svelte/store';
+
+/**
+ * Stores the all texts that are displayed in the terminal
+ */
 export const shellTexts = writable<String[]>([]);
 
+/**
+ * A boolean for handling whether the terminal should be cleared
+ */
 export const clearTerminal = writable<boolean>(false)
