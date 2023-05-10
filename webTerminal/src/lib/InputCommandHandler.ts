@@ -5,7 +5,13 @@ import {clearTerminal, shellTexts} from "$lib/stores/Store";
 const commandList: string[] = [
     "help",
     "clear",
+    "whoami",
+    "projects",
+    "email",
+    "github",
 ];
+
+let userMode: "portfolio" | "free" = "portfolio";
 
 /**
  * Writes a message into the terminal shell history
@@ -50,7 +56,17 @@ export function executeCommand(command: string): void {
         case "clear":
             executeClear();
             break;
+        case "whoami":
+            executeAbout()
+            break;
+        case "email":
+            executeContactEmail()
+            break;
+        case "github":
+            executeLinkToGithub()
+            break;
     }
+
 }
 
 /**
@@ -69,9 +85,32 @@ function executeHelp(): string {
  */
 function executeClear(): void {
     shellTexts.update((shellTexts: String[]) => []);
-
     // make the initial input available again and clear it
     clearTerminal.set(true);
+}
+
+/**
+ * Gives the user a short summary of who I am
+ * TODO: implement
+ */
+function executeAbout() {
+
+}
+
+/**
+ * Makes the terminal an email window
+ * TODO: implement
+ */
+function executeContactEmail() {
+
+}
+
+/**
+ * Opens a new tab with my github profile
+ * TODO: implement
+ */
+function executeLinkToGithub() {
+
 }
 
 // Helper functions for command execution
