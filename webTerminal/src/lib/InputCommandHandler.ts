@@ -11,7 +11,6 @@ const commandList: string[] = [
     "github",
     "resume",
     "skills",
-    "stack",
     "education",
     "tech"
 ];
